@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.24)
-project(MyBoostProject)
+project(csv_median_calculator)
 set(APP_NAME "csv_median_calculator")
 
 set(CMAKE_CXX_STANDARD 23)
