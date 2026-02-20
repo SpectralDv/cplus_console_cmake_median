@@ -1,4 +1,4 @@
-1.работа с git 
+1.добавить проект на git 
 
 git init 
 
@@ -18,12 +18,14 @@ git push
 
 git status 
 
+2.скачать проект с git
+
 git clone https://github.com/spectraldv/cplus_console_cmake_median.git 
 
 git pull origin main
 
 
-2.работа с проектом 
+3.работа с проектом 
 
 mkdir build 
 
