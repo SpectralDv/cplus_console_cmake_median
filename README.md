@@ -22,6 +22,8 @@ git status
 
 git clone https://github.com/spectraldv/cplus_console_cmake_median.git 
 
+git checkout -b ubuntu
+
 git pull origin main
 
 
