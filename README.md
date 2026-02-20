@@ -18,6 +18,10 @@ git push
 
 git status 
 
+git clone https://github.com/spectraldv/cplus_console_cmake_median.git 
+
+git pull origin main
+
 
 2.работа с проектом 
 
@@ -26,3 +30,4 @@ mkdir build
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release 
 
 cmake --build build 
+
