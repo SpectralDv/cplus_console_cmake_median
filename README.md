@@ -100,9 +100,9 @@ mkdir build
 
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release 
 
-cmake --build build 
-
 # 7.редактирование конфига config.toml
+
+cmake --build build 
 
 в поле input = записать путь до path/to/input_dir
 
