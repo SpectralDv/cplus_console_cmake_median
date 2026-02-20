@@ -146,7 +146,6 @@ int main(int argc, char* argv[]) {
 
     std::cout << "Завершение работы" << std::endl; 
     std::cin.get();
-    //system("pause");
 
     return 0;
 }
