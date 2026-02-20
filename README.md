@@ -58,11 +58,15 @@ sudo apt update
 sudo apt install libboost-all-dev
 
 # Если нужны только определенные компоненты (например, только thread и system)
-sudo apt install libboost-thread-dev libboost-system-dev
-Этот метод подходит для большинства случаев, так как устанавливает готовые скомпилированные версии библиотек .
+sudo apt install libboost-thread-dev libboost-system-dev 
+
+# 6.логирование
+sudo apt install libspdlog-dev
+
+
 mkdir build 
 
-# 5.сборка
+# 6.сборка
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release 
 
 cmake --build build 
