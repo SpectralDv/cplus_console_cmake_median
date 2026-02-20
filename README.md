@@ -26,6 +26,13 @@ git checkout -b ubuntu
 
 git pull origin main
 
+git pull
+
+git fetch --all
+
+git reset --hard
+
+
 
 # 3.cmake
 
