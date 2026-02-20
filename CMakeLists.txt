@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.24)
 project(MyBoostProject)
+set(APP_NAME "csv_median_calculator")
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -47,15 +48,15 @@ file(GLOB_RECURSE SOURCES
 list(FILTER SOURCES EXCLUDE REGEX ".*/build/.*|.*/cmake-build-.*/.*")
 message(STATUS "Found .cpp files: ${SOURCES}")
 
-add_executable(app ${SOURCES})
-# add_executable(app main.cpp)
+add_executable(${APP_NAME} ${SOURCES})
+# add_executable(${APP_NAME} main.cpp)
 
 # Линковка csv_median_calculator
-target_link_libraries(app PRIVATE ${Boost_LIBRARIES})
-target_include_directories(app PRIVATE ${Boost_INCLUDE_DIRS})
+target_link_libraries(${APP_NAME} PRIVATE ${Boost_LIBRARIES})
+target_include_directories(${APP_NAME} PRIVATE ${Boost_INCLUDE_DIRS})
 
 find_package(spdlog REQUIRED CONFIG)
-target_link_libraries(app PRIVATE spdlog::spdlog)
+target_link_libraries(${APP_NAME} PRIVATE spdlog::spdlog)
 
 if(WIN32)
 # Находим конкретную DLL
@@ -65,10 +66,10 @@ set(BOOST_DLL_PATH "C:/vcpkg/installed/x64-windows/debug/bin")
 message(STATUS "Boost dll: ${BOOST_DLL_PATH}")
 
 # Копирование DLL в выходную директорию
-add_custom_command(TARGET app POST_BUILD
+add_custom_command(TARGET ${APP_NAME} POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
         "${BOOST_DLL_PATH}/boost_program_options-vc143-mt-gd-x64-1_90.dll"
-        $<TARGET_FILE_DIR:app>
+        $<TARGET_FILE_DIR:${APP_NAME}>
 )
 endif()
 
