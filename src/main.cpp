@@ -27,8 +27,6 @@
     #warning "Unknown platform!"
 #endif
 
-//./app.exe --help
-//./app.exe --config config.toml
 
 // Атомарный флаг для безопасной работы с сигналом
 std::atomic<bool> running{true};

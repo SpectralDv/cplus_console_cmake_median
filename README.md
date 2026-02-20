@@ -81,3 +81,8 @@ cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build 
 
 # 9.найтрока конфига
+
+# 10.запуск приложение
+./app.exe
+./app.exe --help
+./app.exe --config config.toml

@@ -10,9 +10,9 @@ namespace birga {
 class config_parser {
 public: 
     std::string name_config = "config.toml";
-    std::string path_input = "config.toml";
-    std::string path_output = "config.toml";
-    std::string filename_mask = "config.toml";
+    std::string path_input = "";
+    std::string path_output = "";
+    std::string filename_mask = "";
     std::unordered_map<std::string, std::string> umap_config;
     std::unordered_map<std::string, std::string> umap_mask;
 
