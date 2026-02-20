@@ -29,7 +29,7 @@ public:
             // Проверяем, если запрошена справка
             if (vm.count("help")) {
                 std::cout << desc << std::endl;
-                system("pause");
+                std::cin.get();
                 return 1;
             }
 
@@ -42,7 +42,7 @@ public:
             }
         } catch (const po::error& e) {
             std::cerr << "Ошибка: " << e.what() << std::endl;
-            system("pause");
+            std::cin.get();
             return 1;
         }
         return 0;
