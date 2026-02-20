@@ -31,7 +31,7 @@ if(Boost_FOUND)
 message(STATUS "Boost version: ${Boost_VERSION}")
 message(STATUS "Boost libraries: ${Boost_LIBRARIES}")
 message(STATUS "Boost include: ${Boost_INCLUDE_DIRS}")
-message(STATUS "Boost dll: ${BOOST_DLL_DIR}")
+#message(STATUS "Boost dll: ${BOOST_DLL_DIR}")
 
 include_directories(${Boost_INCLUDE_DIRS})
 

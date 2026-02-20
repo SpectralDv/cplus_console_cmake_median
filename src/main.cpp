@@ -145,7 +145,8 @@ int main(int argc, char* argv[]) {
     std::cout << "Результат сохранен: " << _config_parser.umap_config["output"]+"/result.csv" << std::endl; 
 
     std::cout << "Завершение работы" << std::endl; 
-    system("pause");
+    std::cin.get();
+    //system("pause");
 
     return 0;
 }
