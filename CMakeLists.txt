@@ -22,7 +22,7 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 
 # Поиск установленного Boost
-find_package(Boost REQUIRED COMPONENTS program_options json system thread filesystem)
+find_package(Boost REQUIRED COMPONENTS program_options system thread filesystem)
 # Создаем импортированную библиотеку
 
 # Если Boost найден, добавляем его в проект
