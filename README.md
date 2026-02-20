@@ -80,7 +80,9 @@ cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 
 cmake --build build 
 
-# 9.найтрока конфига
+# 9.редактирование конфига config.toml
+в поле input = записать путь до path/to/input_dir
+в поле output = записать путь до path/to/output_dir
 
 # 10.запуск приложение
 ./app.exe
