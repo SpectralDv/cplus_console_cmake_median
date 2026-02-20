@@ -109,8 +109,8 @@ cmake --build build
 
 # 8.запуск приложения
 
-./app.exe
+./app
 
-./app.exe --help
+./app --help
 
-./app.exe --config config.toml
+./app --config config.toml
