@@ -108,7 +108,7 @@ cmake --build build
 
 в поле output = записать путь до path/to/output_dir
 
-# 8.запуск приложение
+# 8.запуск приложения
 
 ./app.exe
 
