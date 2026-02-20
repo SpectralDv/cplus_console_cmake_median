@@ -70,10 +70,12 @@ sudo apt install libboost-thread-dev libboost-system-dev
 # 6.логирование
 sudo apt install libspdlog-dev
 
+# 7.cpptoml
+sudo apt install libcpptoml-dev
 
 mkdir build 
 
-# 6.сборка
+# 8.сборка
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release 
 
 cmake --build build 
