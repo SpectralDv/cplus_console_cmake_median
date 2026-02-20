@@ -94,15 +94,14 @@ sudo apt install libspdlog-dev -y
 
 sudo apt install libcpptoml-dev -y
 
-mkdir build 
-
 # 6.сборка
+
+mkdir build 
 
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release 
 
-# 7.редактирование конфига config.toml
-
 cmake --build build 
+# 7.редактирование конфига config.toml
 
 в поле input = записать путь до path/to/input_dir
 
