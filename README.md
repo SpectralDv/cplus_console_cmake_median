@@ -22,7 +22,8 @@ git status
 
 git clone https://github.com/spectraldv/cplus_console_cmake_median.git 
 
-(если потребуется)
+(1.1. и 1.2. только если потребуется)
+
 1.1.обновить проект с git(удалив все свои изменения)
 
 git fetch --all
@@ -33,7 +34,7 @@ git pull origin main
 
 git pull
 
-1.2.добавить свою ветку с git(если потребуется)
+1.2.добавить свою ветку с git
 
 git checkout -b ubuntu
 
