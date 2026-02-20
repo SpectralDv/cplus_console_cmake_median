@@ -56,17 +56,17 @@ find_package(spdlog REQUIRED CONFIG)
 target_link_libraries(app PRIVATE spdlog::spdlog)
 
 # Находим конкретную DLL
-file(GLOB BOOST_DLLS "${BOOST_DLL_DIR}/*program_options*.dll")
+# file(GLOB BOOST_DLLS "${BOOST_DLL_DIR}/*program_options*.dll")
 
-set(BOOST_DLL_PATH "C:/vcpkg/installed/x64-windows/debug/bin")
-message(STATUS "Boost dll: ${BOOST_DLL_PATH}")
+# set(BOOST_DLL_PATH "C:/vcpkg/installed/x64-windows/debug/bin")
+# message(STATUS "Boost dll: ${BOOST_DLL_PATH}")
 
-# Копирование DLL в выходную директорию
-add_custom_command(TARGET app POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        "${BOOST_DLL_PATH}/boost_program_options-vc143-mt-gd-x64-1_90.dll"
-        $<TARGET_FILE_DIR:app>
-)
+# # Копирование DLL в выходную директорию
+# add_custom_command(TARGET app POST_BUILD
+#     COMMAND ${CMAKE_COMMAND} -E copy_if_different
+#         "${BOOST_DLL_PATH}/boost_program_options-vc143-mt-gd-x64-1_90.dll"
+#         $<TARGET_FILE_DIR:app>
+# )
 
 endif()
 
