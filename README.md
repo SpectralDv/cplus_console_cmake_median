@@ -1,4 +1,4 @@
-# 1.добавить проект на git (только для разработчика)
+# 0.добавить проект на git (только для разработчика)
 
 git init 
 
@@ -18,7 +18,7 @@ git push
 
 git status 
 
-# 2.скачать проект с git
+# 1.скачать проект с git
 
 git clone https://github.com/spectraldv/cplus_console_cmake_median.git 
 
@@ -34,7 +34,7 @@ git reset --hard
 
 
 
-# 3.cmake
+# 2.cmake
 
 #  Удалите старую версию (опционально)
 sudo apt remove --purge cmake
@@ -50,7 +50,7 @@ sudo apt install cmake
 #  Проверьте версию
 cmake --version
 
-# 4.boost
+# 3.boost
 
 # Debian/Ubuntu
 sudo apt update
@@ -67,24 +67,24 @@ sudo apt install libboost-all-dev -y
 # Если нужны только определенные компоненты (например, только thread и system)
 sudo apt install libboost-thread-dev libboost-system-dev -y
 
-# 6.логирование
+# 4.логирование
 sudo apt install libspdlog-dev -y
 
-# 7.cpptoml
+# 5.cpptoml
 sudo apt install libcpptoml-dev -y
 
 mkdir build 
 
-# 8.сборка
+# 6.сборка
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release 
 
 cmake --build build 
 
-# 9.редактирование конфига config.toml
+# 7.редактирование конфига config.toml
 в поле input = записать путь до path/to/input_dir
 в поле output = записать путь до path/to/output_dir
 
-# 10.запуск приложение
+# 8.запуск приложение
 ./app.exe
 ./app.exe --help
 ./app.exe --config config.toml
