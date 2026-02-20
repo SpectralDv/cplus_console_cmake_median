@@ -30,9 +30,9 @@ git fetch --all
 
 git reset --hard
 
-git pull origin main
-
 git pull
+
+(git pull origin main)
 
 1.2.добавить свою ветку с git
 
