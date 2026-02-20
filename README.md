@@ -62,16 +62,16 @@ sudo dnf install autoconf libtool
 sudo apt update
 
 # Установка всех библиотек Boost (рекомендуется для начинающих)
-sudo apt install libboost-all-dev
+sudo apt install libboost-all-dev -y
 
 # Если нужны только определенные компоненты (например, только thread и system)
-sudo apt install libboost-thread-dev libboost-system-dev 
+sudo apt install libboost-thread-dev libboost-system-dev -y
 
 # 6.логирование
-sudo apt install libspdlog-dev
+sudo apt install libspdlog-dev -y
 
 # 7.cpptoml
-sudo apt install libcpptoml-dev
+sudo apt install libcpptoml-dev -y
 
 mkdir build 
 
