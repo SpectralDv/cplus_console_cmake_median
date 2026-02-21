@@ -1,9 +1,9 @@
     # Путь к директории с входными CSV-файлами
-    input = 'path\to\input_dir'
+    input = 'D:\Progs\VSCode\1.Cplus\1000.TZ\HACKA birja\build\Debug\path\to\input_dir'
     
     # Путь к директории для выходных CSV-файлов
     # Если не указан, создается директория 'output' рядом с приложением
-    output = 'path\to\output_dir'
+    output = 'D:\Progs\VSCode\1.Cplus\1000.TZ\HACKA birja\build\Debug\path\to\output_dir'
     
     # Список масок имен файлов для фильтрации
     # Если список пустой, читаются все CSV-файлы из директории
