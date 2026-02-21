@@ -81,7 +81,8 @@ public:
     void init_write_file(const std::string& path) {
         std::ofstream file(path);
         if (!file.is_open()) {
-            std::cerr << "Ошибка открытия файла: " << path << std::endl;
+            spdlog::error("Ошибка открытия файла: " + path);
+            //std::cerr << "Ошибка открытия файла: " << path << std::endl;
             return;
         }
         file << "receive_ts;price_median\n";
@@ -91,7 +92,8 @@ public:
         //std::ofstream file(path);
         if (std::filesystem::exists(path)) {
             if (!std::filesystem::remove(path)) {
-                std::cerr << "Не удалось удалить файл " << path << std::endl;
+                spdlog::error("Не удалось удалить файл: " + path);
+                //std::cerr << " Не удалось удалить файл: " << path << std::endl;
                 return;
             }
         }
@@ -102,7 +104,8 @@ public:
         std::ofstream file(path, std::ios::app | std::ios::out);
 
         if (!file.is_open()) {
-            std::cerr << "Ошибка открытия файла: " << path << std::endl;
+            spdlog::error("Ошибка открытия файла: " + path);
+            //std::cerr << " Ошибка открытия файла: " << path << std::endl;
             return;
         }
 
@@ -126,7 +129,8 @@ private:
         
         std::ifstream file(path);
         if (!file.is_open()) {
-            std::cerr << "Ошибка: не удалось открыть файл " << filename << std::endl;
+            spdlog::error("Ошибка: не удалось открыть файл: " + filename);
+            //std::cerr << "Ошибка: не удалось открыть файл " << filename << std::endl;
             return;
         }
         
