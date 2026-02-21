@@ -25,11 +25,11 @@ public:
     ~csv_reader(){}
     void update(config_parser& _config_parser) {
         search_files(_config_parser.umap_config["input"]);
-        count_files = umap_files.size();
+        count_files = static_cast<int>(umap_files.size());
         if(count_files == 0){
             search_files_mask(_config_parser.umap_config["filename_mask"]);
         }
-        count_files = umap_files.size();
+        count_files = static_cast<int>(umap_files.size());
     }
     void search_files(std::string path) {
         try {
