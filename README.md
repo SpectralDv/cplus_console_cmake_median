@@ -121,8 +121,8 @@ cmake --build build --config Release --target install
 
 # 8.запуск приложения
 
-./app
+./csv_median_calculator
 
-./app --help
+./csv_median_calculator --help
 
-./app --config config.toml
+./csv_median_calculator --config config.toml
