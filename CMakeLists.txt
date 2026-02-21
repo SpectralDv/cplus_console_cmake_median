@@ -51,6 +51,12 @@ message(STATUS "Found .cpp files: ${SOURCES}")
 add_executable(${APP_NAME} ${SOURCES})
 # add_executable(${APP_NAME} main.cpp)
 
+install(TARGETS ${APP_NAME}
+    RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}  # Для Windows - .exe
+    # LIBRARY DESTINATION ${CMAKE_SOURCE_DIR}/lib  # Для библиотек
+    # ARCHIVE DESTINATION ${CMAKE_SOURCE_DIR}/lib  # Для статических библиотек
+)
+
 # Линковка csv_median_calculator
 target_link_libraries(${APP_NAME} PRIVATE ${Boost_LIBRARIES})
 target_include_directories(${APP_NAME} PRIVATE ${Boost_INCLUDE_DIRS})
