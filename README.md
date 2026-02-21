@@ -18,6 +18,8 @@ git push
 
 git status 
 
+git rm --cached *.exe
+
 # 1.скачать проект с git
 
 git clone https://github.com/spectraldv/cplus_console_cmake_median.git 
