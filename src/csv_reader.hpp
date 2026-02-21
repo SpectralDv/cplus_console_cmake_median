@@ -40,8 +40,9 @@ public:
                 std::cout << "Некорректный путь: " << input_path << std::endl;
                 return;
             }
-            
-            std::cout << "Файлы в текущей директории:" << std::endl;
+
+            spdlog::info("Файлы в текущей директории:");
+            //std::cout << "Файлы в текущей директории:" << std::endl;
             
             // Только текущая директория (без поддиректорий)
             for (const auto& entry : fs::directory_iterator(input_path)) {
@@ -120,7 +121,8 @@ public:
 
 private:
     void read_files(const std::string& filename,const std::string& path) {
-        std::cout << "Чтение файла: " << filename << std::endl;
+        spdlog::info("Чтение файла: " + filename);
+        //std::cout << "Чтение файла: " << filename << std::endl;
         
         std::ifstream file(path);
         if (!file.is_open()) {

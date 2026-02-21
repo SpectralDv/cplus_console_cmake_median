@@ -9,7 +9,7 @@
 namespace birga {
 class config_parser {
 public: 
-    std::string name_config = "config.toml";
+    std::string name_config = "";
     std::string path_input = "";
     std::string path_output = "";
     std::string filename_mask = "";
@@ -21,8 +21,8 @@ public:
     {
         umap_config = {
             {"name_config", "config.toml"},
-            {"input", "/path/to/input_dir"},
-            {"output", "/path/to/output_dir"},
+            {"input", "path/to/input_dir"},
+            {"output", "path/to/output_dir"},
         };
     }
     ~config_parser(){}
@@ -30,6 +30,7 @@ public:
         try {
             // Парсим TOML файл
             auto config = cpptoml::parse_file(name_config);
+            update_umap("name_config",name_config,umap_config);
             
             // Читаем input
             auto input = config->get_as<std::string>("input");

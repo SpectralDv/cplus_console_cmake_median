@@ -13,7 +13,7 @@ public:
     model_program_options(){}
     ~model_program_options(){}
 
-    int input(int argc, char* argv[],config_parser _config_parser){
+    int input(int argc, char* argv[],config_parser& _config_parser){
         try {
             po::options_description desc("Допустимые опции");
 
@@ -38,7 +38,7 @@ public:
             
             if (vm.count("config")) {
                 _config_parser.name_config = vm["config"].as<std::string>();
-                //std::cout << "Конфиг: " << _config_parser.name_config << std::endl;
+                //std::cout << "Конфиг: " << vm["config"].as<std::string>() << std::endl;
             }
         } catch (const po::error& e) {
             std::cerr << "Ошибка: " << e.what() << std::endl;
