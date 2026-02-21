@@ -103,10 +103,12 @@ cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 (Linux)
 
 cmake --build build
+cmake --build build --config Release 
 
 (Windows)
 
 cmake --build build --target install
+cmake --build build --config Release --target install
 
 
 # 7.редактирование конфига config.toml

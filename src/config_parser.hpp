@@ -88,43 +88,6 @@ private:
             // std::cout << "Элемент key уже существует: " << it->second << std::endl;
         }
     }
-
-//     void parser(const std::string& key, const std::string& value){
-//         if(key == "filename_mask"){
-//             parser_filename_mask(key,value);
-//             return;
-//         }
-        
-//     } 
-//     void parser_filename_mask(const std::string& key, const std::string& value)
-//     {
-//         std::string trimmed = value;
-//         // Удаляем квадратные скобки
-//         if (trimmed.front() == '[') trimmed = trimmed.substr(1);
-//         if (trimmed.back() == ']') trimmed.pop_back();
-        
-//         // Разделяем по запятым
-//         std::vector<std::string> items;
-//         boost::split(items, trimmed, boost::is_any_of(","));
-
-//         // Очищаем каждый элемент от кавычек и пробелов
-//         for (auto& item : items) {
-//             boost::trim(item);
-//             boost::erase_all(item, "'");
-//             boost::erase_all(item, "\"");
-//             if (!item.empty()) {
-//                 // insert возвращает пару (итератор, bool)
-//                 // bool = true если элемент был вставлен, false если уже существовал
-//                 auto [it, inserted] = umap_mask.insert({key, item});
-//                 if (inserted) {
-//                     //std::cout << "Элемент key3 добавлен: " << it->second << std::endl;
-//                 } else {
-//                     umap_mask[key] = item;
-//                     //std::cout << "Элемент key3 уже существует: " << it->second << std::endl;
-//                 }
-//             }
-//         }
-//     }
 };
 }
 

@@ -9,8 +9,7 @@
 #include <iomanip>
 #include <locale>
 
-//- `std::format` — для форматирования строк и логирования
-//- `std::ranges` — для обработки данных (опционально)
+#include "config_parser.hpp"
 
 namespace birga {
 namespace fs = std::filesystem;
@@ -24,6 +23,14 @@ public:
 public:
     csv_reader(){}
     ~csv_reader(){}
+    void update(config_parser& _config_parser) {
+        search_files(_config_parser.umap_config["input"]);
+        count_files = umap_files.size();
+        if(count_files == 0){
+            search_files_mask(_config_parser.umap_config["filename_mask"]);
+        }
+        count_files = umap_files.size();
+    }
     void search_files(std::string path) {
         try {
             fs::path input_path(path);
@@ -39,13 +46,20 @@ public:
             // Только текущая директория (без поддиректорий)
             for (const auto& entry : fs::directory_iterator(input_path)) {
                 if (fs::is_regular_file(entry.path())) {
-                    count_files ++;
+                    //count_files ++;
                     //std::cout << "  - " << entry.path().filename().string() << std::endl;
                     read_files(entry.path().filename().string(),entry.path().string());
                 }
             }
         } catch (const std::exception& e) {
             std::cerr << "Ошибка: " << e.what() << std::endl;
+        }
+    }
+    void search_files_mask(std::string mask) {
+        std::stringstream ss(mask);
+        std::string path;
+        while (std::getline(ss, path, ',')) {
+            search_files(path);
         }
     }
     std::string get_value(std::string name_file,std::string key){
