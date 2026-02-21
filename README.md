@@ -100,6 +100,12 @@ mkdir build
 
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release 
 
+(Linux)
+
+cmake --build build
+
+(Windows)
+
 cmake --build build --target install
 
 

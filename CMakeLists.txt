@@ -51,11 +51,24 @@ message(STATUS "Found .cpp files: ${SOURCES}")
 add_executable(${APP_NAME} ${SOURCES})
 # add_executable(${APP_NAME} main.cpp)
 
+if(UNIX)
+# Копируем файл в директорию ниже (из build/ в корневую папку проекта)
+add_custom_command(TARGET ${APP_NAME} POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy
+        $<TARGET_FILE:${APP_NAME}>  # Полный путь к собранному файлу
+        # ${CMAKE_SOURCE_DIR}/bin/${APP_NAME}  # Целевой путь
+        ${CMAKE_SOURCE_DIR}/${APP_NAME}  # Целевой путь
+    COMMENT "Copying ${APP_NAME} to project bin directory"
+)
+endif()
+
+if(WIN32)
 install(TARGETS ${APP_NAME}
     RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}  # Для Windows - .exe
     # LIBRARY DESTINATION ${CMAKE_SOURCE_DIR}/lib  # Для библиотек
     # ARCHIVE DESTINATION ${CMAKE_SOURCE_DIR}/lib  # Для статических библиотек
 )
+endif()
 
 # Линковка csv_median_calculator
 target_link_libraries(${APP_NAME} PRIVATE ${Boost_LIBRARIES})
